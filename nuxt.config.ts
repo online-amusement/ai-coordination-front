@@ -1,12 +1,18 @@
-export default {
+import { NuxtConfig } from '@nuxt/types';
+require('dotenv').config();
+const environment = process.env.NODE_ENV || 'development';
+const envSet = require(`./env.${environment}.ts`);
+
+const nuxtConfig: NuxtConfig = {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  dev: process.env.NODE_ENV !== 'production',
   ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ai-coordination-front',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -16,7 +22,12 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [],
+  },
+  env: envSet,
+  server: {
+    port:3000
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -44,3 +55,5 @@ export default {
   build: {
   }
 }
+
+export default nuxtConfig
