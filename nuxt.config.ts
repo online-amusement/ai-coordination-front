@@ -49,10 +49,35 @@ const nuxtConfig: NuxtConfig = {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/auth',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  auth: {
+    redirect: {
+      home: false,
+      logout: false,
+      callback: false
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: envSet.API_URL + '/api/login', method: 'post', propertyName: 'data', headers: {'content-Type': 'application/json'}},
+          logout: false,
+          user: { url: envSet.API_URL + '/api/member', method: 'get', propertyName: 'data' }
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+      }
+    }
+  }
+}
+//$authの型定義
+declare module 'vue/types/vue' {
+  interface Vue {
+    $auth: any
   }
 }
 
