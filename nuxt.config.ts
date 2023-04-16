@@ -50,6 +50,7 @@ const nuxtConfig: NuxtConfig = {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/auth',
+    '@nuxtjs/axios',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
