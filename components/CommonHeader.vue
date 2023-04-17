@@ -10,10 +10,18 @@
                 <nuxt-link to="/login">ログイン</nuxt-link>
             </div>
             <div class="menu" v-bind:class="{'is-active' : open }">
-                <div class="menu__item">TOP</div>
-                <div class="menu__item">ABOUT</div>
-                <div class="menu__item">BLOG</div>
-                <div class="menu__item">CONTACT</div>
+                <nuxt-link to="/home" class="menu-area-btn">
+                    <div class="menu__item">TOP</div>
+                </nuxt-link>
+                <nuxt-link to="#" class="menu-area-btn">
+                    <div class="menu__item">ABOUT</div>
+                </nuxt-link>
+                <nuxt-link to="#" class="menu-area-btn">
+                    <div class="menu__item">BLOG</div>
+                </nuxt-link>
+                <nuxt-link to="#" class="menu-area-btn">
+                    <div class="menu__item">CONTACT</div>
+                </nuxt-link>
             </div>
     </header>
 </template>
@@ -89,5 +97,8 @@ openMenu() {
 .login-btn {
     margin-right: 30px;
     cursor: pointer;
+}
+.menu-area-btn {
+    text-decoration: none;
 }
 </style>
