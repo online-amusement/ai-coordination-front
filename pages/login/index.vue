@@ -56,14 +56,30 @@ form:any = {
     email: '',
     password: '',
 }
+data:any = [];
+error: string = '';
 
 async login() {
     try {
         let response = await this.$auth.loginWith('local', {data:this.form})
-        console.log(response);
+        if(response.data.result = true) {
+            this.data = response.data.data
+            localStorage.setItem("auth._token.local",this.data)
+            if(this.$auth.user.status != 0) {
+                this.$router.push('/home/')
+            }else {
+                this.$router.push('/registration/profile/')
+            }
+       }else {
+            this.error = response.data.message
+            console.log(this.error)
+       }
     }catch {
         
     }
+}
+googleLogin() {
+
 }
 }
 </script>

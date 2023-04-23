@@ -56,6 +56,9 @@ const nuxtConfig: NuxtConfig = {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+  router: {
+    middleware: ['checkLogin']
+  },
   auth: {
     redirect: {
       home: false,
