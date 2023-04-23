@@ -6,7 +6,7 @@
             <div v-if="$auth.loggedIn" class="menu-area" @click="openMenu">
                 <img class="menu-btn" src="/images/menu.png">
             </div>
-            <div v-else class="login-btn">
+            <div v-else class="log-btn">
                 <nuxt-link to="/login">ログイン</nuxt-link>
             </div>
             <div class="menu" v-bind:class="{'is-active' : open }">
@@ -41,7 +41,7 @@ openMenu() {
 }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scorped>
 .logo {
     width: 80px;
     height: auto;

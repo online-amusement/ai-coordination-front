@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <CommonHeader />
     <div class="area-title">
       <h2>Aiコーディネート使い方</h2>
     </div>
@@ -51,11 +50,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import CommonHeader from '~/components/CommonHeader.vue';
 
 @Component({
   components: {
-    CommonHeader,
   }
 })
   
@@ -63,7 +60,7 @@ export default class INDEX extends Vue {
 
 }
 </script>
-<style lang="scss">
+<style lang="scss" scorped>
 .main-container {
   max-width: 1200px;
   margin: 0 auto;

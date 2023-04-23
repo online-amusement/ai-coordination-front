@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 let domain = process.env.API_URL + '/api';
-let axios = axios.create();
+let axiosInstance = axios.create();
 
 //仮登録
 const memberTemporaryRegistration = (data) =>
