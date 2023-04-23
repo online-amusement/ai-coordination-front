@@ -16,4 +16,11 @@ export default class ResponseData extends Basic {
             token: token
         });
     }
+
+    public static login(email: string, password: string):Promise<Member> {
+        return this.createPromise(AI_CD.login, {
+            email: email,
+            password: password
+        });
+    }
 }

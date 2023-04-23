@@ -31,6 +31,9 @@ export default class VERIFY extends Vue {
 token:string =  '';
 nickname: string =  '';
 password: string = '';
+result: string = '';
+error: string = '';
+
     
 async created() {
     let params = this.getParams(location.search);
@@ -48,6 +51,13 @@ getParams = (params: string): { [key: string]: string } => {
 async profileRegist() {
     const response = await ResponseData.officialRegistration(this.nickname, this.password, this.token);
     console.log(response)
+    if(response.status = 200) {
+        this.result = response.message + '送信したメールからログインしてください。'
+        this.nickname = '';
+        this.password = '';
+    }else {
+        this.error = response.message + 'メールの期限が切れてる可能性があります。ご確認ください。'
+    }
 }
 
 }
