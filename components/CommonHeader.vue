@@ -1,28 +1,31 @@
 <template>
     <header class="header">
-            <div class="logo-area" @click="backHome()">
-                <img class="logo" src="/images/logo.png">
-            </div>
-            <div v-if="$auth.loggedIn" class="menu-area" @click="openMenu">
-                <img class="menu-btn" src="/images/menu.png">
-            </div>
-            <div v-else class="log-btn">
-                <nuxt-link to="/login">ログイン</nuxt-link>
-            </div>
-            <div class="menu" v-bind:class="{'is-active' : open }">
-                <nuxt-link to="/home" class="menu-area-btn">
-                    <div class="menu__item">TOP</div>
-                </nuxt-link>
-                <nuxt-link to="#" class="menu-area-btn">
-                    <div class="menu__item">ABOUT</div>
-                </nuxt-link>
-                <nuxt-link to="#" class="menu-area-btn">
-                    <div class="menu__item">BLOG</div>
-                </nuxt-link>
-                <nuxt-link to="#" class="menu-area-btn">
-                    <div class="menu__item">CONTACT</div>
-                </nuxt-link>
-            </div>
+        <div class="logo-area" @click="backHome()">
+            <img class="logo" src="/images/logo.png">
+        </div>
+        <div v-if="$auth.loggedIn" class="menu-area" @click="openMenu">
+            <img class="menu-btn" src="/images/menu.png">
+        </div>
+        <div v-else class="log-btn">
+            <nuxt-link to="/login">ログイン</nuxt-link>
+        </div>
+        <div class="menu" v-bind:class="{'is-active' : open }">
+            <a href="/home" class="menu-area-btn">
+                <div class="menu__item">トップページ</div>
+            </a>
+            <a href="#" class="menu-area-btn">
+                <div class="menu__item">サービス内容</div>
+            </a>
+            <a href="/mypage" class="menu-area-btn">
+                <div class="menu__item">マイページ</div>
+            </a>
+            <a href="#" class="menu-area-btn">
+                <div class="menu__item">購入履歴</div>
+            </a>
+            <a href="#" class="menu-area-btn">
+                <div class="menu__item">オリジナル画像作成</div>
+            </a>
+        </div>
     </header>
 </template>
 <script lang="ts">
@@ -41,7 +44,7 @@ openMenu() {
 }
 }
 </script>
-<style lang="scss" scorped>
+<style lang="scss" scoped>
 .logo {
     width: 80px;
     height: auto;

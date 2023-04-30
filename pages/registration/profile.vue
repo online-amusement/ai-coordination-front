@@ -62,7 +62,7 @@ async profileRegist() {
 
 }
 </script>
-<style lang="scss" scorped>
+<style lang="scss" scoped>
 .profile-area {
     max-width: 1200px;
     margin: 0 auto;
