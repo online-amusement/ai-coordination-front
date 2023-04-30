@@ -23,4 +23,23 @@ export default class ResponseData extends Basic {
             password: password
         });
     }
+
+    public static memberEmailEdit(email: string):Promise<Member> {
+        return this.createPromise(AI_CD.memberEmailEdit, {
+            email: email,
+        });
+    }
+
+    public static memberNicknameEdit(nickname: string):Promise<Member> {
+        return this.createPromise(AI_CD.memberNicknameEdit, {
+            nickname: nickname,
+        });
+    }
+
+    public static memberPasswordEdit(password: string, password_confirmation: string):Promise<Member> {
+        return this.createPromise(AI_CD.memberPasswordEdit, {
+            password: password,
+            password_confirmation: password_confirmation
+        });
+    }
 }

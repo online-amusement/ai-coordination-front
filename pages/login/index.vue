@@ -16,7 +16,6 @@
                 <div class="login-btn">
                     <button class="btn" type="button" @click="login">ログイン</button>
                 </div>
-                <div>{{ $auth.loggedIn }}</div>
             </form>
         </div>
 
@@ -83,7 +82,7 @@ googleLogin() {
 }
 }
 </script>
-<style lang="scss" scorped>
+<style lang="scss" scoped>
 .email-log-title {
     text-align: center;
 }

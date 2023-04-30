@@ -21,7 +21,9 @@ const nuxtConfig: NuxtConfig = {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href:"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" },
+      { href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet' },
     ],
     script: [],
   },
@@ -36,6 +38,8 @@ const nuxtConfig: NuxtConfig = {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/axios',
+    '@/plugins/vue-js-modal.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -82,6 +86,7 @@ const nuxtConfig: NuxtConfig = {
 declare module 'vue/types/vue' {
   interface Vue {
     $auth: any
+    $modal: any
   }
 }
 

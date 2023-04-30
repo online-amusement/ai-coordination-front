@@ -64,7 +64,7 @@ googleLogin() {
 }
 }
 </script>
-<style lang="scss" scorped>
+<style lang="scss" scoped>
 .title {
     text-align: center;
 }

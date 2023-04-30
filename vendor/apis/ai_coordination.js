@@ -24,10 +24,31 @@ const login = (data) =>
         password: data.password,
     });
 
+const memberEmailEdit = (data) =>
+    axios.post(domain + '/member/email-edit', {
+        email: data.email,
+    })
+
+const memberNicknameEdit = (data) =>
+    axios.post(domain + '/member/nickname-edit', {
+        nickname: data.nickname,
+    })
+
+const memberPasswordEdit = (data) =>
+    axios.post(domain + '/member/password-edit', {
+        password: data.password,
+        password_confirmation: data.password_confirmation
+    })
+
+
+
 export {
     memberTemporaryRegistration,
     memberOfficialRegistration,
     login,
+    memberEmailEdit,
+    memberNicknameEdit,
+    memberPasswordEdit,
 }
 
 

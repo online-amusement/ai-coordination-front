@@ -60,7 +60,7 @@ export default class INDEX extends Vue {
 
 }
 </script>
-<style lang="scss" scorped>
+<style lang="scss" scoped>
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
