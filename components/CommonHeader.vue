@@ -9,7 +9,12 @@
         <div v-else class="log-btn">
             <nuxt-link to="/login">ログイン</nuxt-link>
         </div>
-        <div class="menu" v-bind:class="{'is-active' : open }">
+        <div v-if="$auth.loggedIn" class="news">
+            <a href="/news" class="menu-area-btn">
+                <img src="/images/bell.png" class="news-btn">
+            </a>
+        </div>
+        <div v-if="$auth.loggedIn" class="menu" v-bind:class="{'is-active' : open }">
             <a href="/home" class="menu-area-btn">
                 <div class="menu__item">トップページ</div>
             </a>
@@ -18,6 +23,9 @@
             </a>
             <a href="/mypage" class="menu-area-btn">
                 <div class="menu__item">マイページ</div>
+            </a>
+            <a href="/news" class="menu-area-btn">
+                <div class="menu__item">お知らせ</div>
             </a>
             <a href="#" class="menu-area-btn">
                 <div class="menu__item">購入履歴</div>
@@ -92,6 +100,7 @@ openMenu() {
 .menu{
   transform: translateX(50vw);
   transition: all .3s linear;
+  z-index: 2;
 }
 /* アニメーション後のメニューの状態 */
 .menu.is-active{
@@ -103,5 +112,14 @@ openMenu() {
 }
 .menu-area-btn {
     text-decoration: none;
+}
+.news-btn {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    z-index: 3;
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
 }
 </style>

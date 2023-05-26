@@ -18,7 +18,8 @@
     "nuxt": "^2.15.8",
     "nuxt-property-decorator": "^2.9.1",
     "sass-loader": "^10.2.0",
-    "vue": "^2.7.10",
+    "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-js-modal": "^2.0.1",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
