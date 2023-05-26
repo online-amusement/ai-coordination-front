@@ -40,6 +40,11 @@ const memberPasswordEdit = (data) =>
         password_confirmation: data.password_confirmation
     })
 
+const news = (data) =>
+    axios.get(domain + '/news', {
+
+    });
+
 
 
 export {
@@ -49,6 +54,7 @@ export {
     memberEmailEdit,
     memberNicknameEdit,
     memberPasswordEdit,
+    news,
 }
 
 

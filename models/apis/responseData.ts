@@ -1,6 +1,7 @@
 import Basic from './basic';
 import Member from '../entitis/member';
 import * as AI_CD from '~/vendor/apis/ai_coordination';
+import News from '../entitis/news';
 
 export default class ResponseData extends Basic {
     public static temporaryRegistration(email:string):Promise<Member> {
@@ -40,6 +41,12 @@ export default class ResponseData extends Basic {
         return this.createPromise(AI_CD.memberPasswordEdit, {
             password: password,
             password_confirmation: password_confirmation
+        });
+    }
+
+    public static news():Promise<News> {
+        return this.createPromise(AI_CD.news, {
+
         });
     }
 }
