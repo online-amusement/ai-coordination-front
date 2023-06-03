@@ -19,37 +19,46 @@
 import { Vue, Component } from 'nuxt-property-decorator';
 import ResponseData from '~/models/apis/responseData';
 import News from '~/models/entitis/news';
-@Component({})
+@Component({
+})
 export default class HOME extends Vue {
-    newsData: any = [];
-    data() {
-        return {
-            swiperOption: {
-            speed: 1000,//スライドの切り替わりスピード
-            spaceBetween: 30,//各スライドの余白
-            centeredSlides: true,//スライダーを真ん中に
-            slidesPerView: 1,
-            loop: true, //無限ループ
-                autoplay: { //スライドの自動切り替え
-                    delay: 5000,//スライドの自動切り替えの秒数
-                    disableOnInteraction: false//何らかのアクション後の自動切り替えを再開
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                },
-            }
-        }
+newsData: any = [];
+publishableKey: any;
+token: any;
+cardNumber: any;
+cardExpiry: any;
+cardCvc: any;
+
+data() {
+    return {
+        swiperOption: {
+        speed: 1000,//スライドの切り替わりスピード
+        spaceBetween: 30,//各スライドの余白
+        centeredSlides: true,//スライダーを真ん中に
+        slidesPerView: 1,
+        loop: true, //無限ループ
+            autoplay: { //スライドの自動切り替え
+                delay: 5000,//スライドの自動切り替えの秒数
+                disableOnInteraction: false//何らかのアクション後の自動切り替えを再開
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+        },
+        token: null,
     }
-    async mounted() {
-        let response = await ResponseData.news();
-        this.newsData = response.data
-        console.log(this.newsData);
-    }
+}
+async mounted() {
+    let response = await ResponseData.news();
+    this.newsData = response.data
+    console.log(this.newsData);
+}
+
 }
 </script>
 <style lang="scss" scoped>
@@ -68,7 +77,7 @@ export default class HOME extends Vue {
 }
 .swiper-container {
   height: 400px;
-  width: 800px;
+  max-width: 800px;
 }
 .swiper-wrapper {
     transition-duration: 0ms;

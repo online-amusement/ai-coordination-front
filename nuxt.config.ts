@@ -25,7 +25,9 @@ const nuxtConfig: NuxtConfig = {
       { rel: 'stylesheet', href:"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" },
       { href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet' },
     ],
-    script: [],
+    script: [
+      { src: 'https://js.stripe.com/v3' },
+    ],
   },
   env: envSet,
   server: {
@@ -41,6 +43,8 @@ const nuxtConfig: NuxtConfig = {
     '@/plugins/axios',
     '@/plugins/vue-js-modal.js',
     '@/plugins/vue-awesome-swiper',
+    '@/plugins/vue-stripe',
+    '@/plugins/filters'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -88,6 +92,7 @@ declare module 'vue/types/vue' {
   interface Vue {
     $auth: any
     $modal: any
+    $stripe: any
   }
 }
 
