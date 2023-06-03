@@ -45,6 +45,27 @@ const news = (data) =>
 
     });
 
+const payments = (data) =>
+    axios.get(domain + '/payments', {
+
+    });
+
+const paymentHistory = (data) =>
+    axios.post(domain + '/payments', 
+    {
+        memberId: data.memberId,
+        amount: data.amount,
+        point: data.point
+    }
+    );
+
+const paymentHistoryData = (data) =>
+    axios.get(domain + '/payments/history', {
+        params: {
+            memberId: data.memberId
+        }
+    });
+
 
 
 export {
@@ -55,6 +76,9 @@ export {
     memberNicknameEdit,
     memberPasswordEdit,
     news,
+    payments,
+    paymentHistory,
+    paymentHistoryData
 }
 
 

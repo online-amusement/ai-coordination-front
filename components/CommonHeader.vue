@@ -27,7 +27,10 @@
             <a href="/news" class="menu-area-btn">
                 <div class="menu__item">お知らせ</div>
             </a>
-            <a href="#" class="menu-area-btn">
+            <a href="/payment" class="menu-area-btn">
+                <div class="menu__item">ポイント購入</div>
+            </a>
+            <a href="/payment/history" class="menu-area-btn">
                 <div class="menu__item">購入履歴</div>
             </a>
             <a href="#" class="menu-area-btn">
